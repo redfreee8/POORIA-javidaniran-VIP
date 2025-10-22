@@ -33,12 +33,8 @@ jobs:
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions-bot@github.com"
           
-          # --- تغییر اصلی اینجاست ---
-          # این دستور تمام فایل‌های txt. که با POORIA شروع می‌شوند را اضافه می‌کند
-          # (شامل POORIA-MIX.txt, POORIA-VLESS.txt, POORIA-LOC-DE.txt, و غیره)
-          git add POORIA*.txt
+          # این دستور تمام فایل‌های txt. که با POORIAred شروع می‌شوند را اضافه می‌کند
+          git add POORIAred*.txt
 
           git diff --quiet && git diff --staged --quiet || git commit -m "Updated subscription files"
           git push
-
-
