@@ -1,0 +1,44 @@
+name: V2Ray Config Collector
+
+on:
+  schedule:
+    - cron: '0 */1 * * *' # هر یک ساعت اجرا می‌شود
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # اجازه پوش کردن به اکشن
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: pip install requests
+
+      - name: Run Collector Script
+        run: python collector.py # اسکریپت پایتون اجرا می‌شود و همه‌ی فایل‌ها را می‌سازد
+
+      - name: Commit and Push new sub files
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions-bot@github.com"
+          
+          # --- تغییر اصلی اینجاست ---
+          # این دستور تمام فایل‌های txt. که با POORIA شروع می‌شوند را اضافه می‌کند
+          # (شامل POORIA-MIX.txt, POORIA-VLESS.txt, POORIA-LOC-DE.txt, و غیره)
+          git add POORIA*.txt
+
+          git diff --quiet && git diff --staged --quiet || git commit -m "Updated subscription files"
+          git push
+
+
