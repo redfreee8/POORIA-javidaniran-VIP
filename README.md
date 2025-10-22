@@ -18,4 +18,4 @@
 <div dir="ltr">
 
 ```bash
-[https://raw.githubusercontent.com/redfreee8/POORIA-javidaniran-VIP/main/POORIAred-MIX.txt](https://raw.githubusercontent.com/redfreee8/POORIA-javidaniran-VIP/main/POORIAred-MIX.txt)
+[https://github.com/redfreee8/POORIA-javidaniran-VIP/blob/main/POORIAred-MIX.txt)
