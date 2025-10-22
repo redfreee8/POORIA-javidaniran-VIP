@@ -27,7 +27,7 @@ JAVID_NAMAN: List[str] = [
     # --- جاویدنامان آبان ۹۸ ---
     "پویا بختیاری", "نیکتا اسفندانی", "نوید بهبودی", "فرزاد انصاری‌فر", "ارشام ابراهیمی", "ابراهیم کتابدار",
     "پژمان قلی‌پور", "مهدی نکویی", "آذر میرزاپور", "منوچهر رضایی", "محسن جعفرپناه", "امیررضا عبداللهی",
-    "رضا معظمی", "امیرحسین صادقی", "سعید زینبی", "علیرضا نوری", "محمد حشم‌دار", "مهرداد معین‌فر",
+    "رضا معظمی", "امیرحسین صادقی", "سعید زینبی", "علیره نوری", "محمد حشم‌دار", "مهرداد معین‌فر",
     "وحید دامور", "برهان منصوری", "کمال فرجی", "حمید رسولی", "محمدجواد عابدی", "جواد بابایی",
     "مهدی پازوکی", "علی رحمانی", "مسعود رضوی", "امیر الوندی‌مهر", "آرش کهزادی", "ناصر رضایی",
     "رضا حسن‌وند", "آرمین قادری", "امیر شاملو", "حسین قدمی", "میلاد محبوبی", "بهمن جعفری",
@@ -42,14 +42,15 @@ SUB_LINKS: List[str] = [
     "https://lively-dream-c48b.mehdipost675.workers.dev/?token=fedfed7b41b828f17cfb2371c8ee16df"
 ]
 
+# --- !! تغییر اعمال شد !! ---
 # --- نام فایل‌های خروجی پروتکل ---
-OUTPUT_FILENAME_MIX: str = "POORIA-MIX.txt" # نام قبلی POORIAJavidanIran.txt بود
-OUTPUT_FILENAME_VLESS: str = "POORIA-VLESS.txt"
-OUTPUT_FILENAME_VMESS: str = "POORIA-VMESS.txt"
-OUTPUT_FILENAME_TROJAN: str = "POORIA-TROJAN.txt"
-OUTPUT_FILENAME_HYSTERIA: str = "POORIA-HYSTERIA.txt"
-OUTPUT_FILENAME_SS: str = "POORIA-SS.txt"
-OUTPUT_FILENAME_OTHER: str = "POORIA-OTHER.txt"
+OUTPUT_FILENAME_MIX: str = "POORIAred-MIX.txt"
+OUTPUT_FILENAME_VLESS: str = "POORIAred-VLESS.txt"
+OUTPUT_FILENAME_VMESS: str = "POORIAred-VMESS.txt"
+OUTPUT_FILENAME_TROJAN: str = "POORIAred-TROJAN.txt"
+OUTPUT_FILENAME_HYSTERIA: str = "POORIAred-HYSTERIA.txt"
+OUTPUT_FILENAME_SS: str = "POORIAred-ss.txt" # طبق درخواست اصلی
+OUTPUT_FILENAME_OTHER: str = "POORIAred-OTHER.txt"
 
 # --- تنظیمات دسته‌بندی لوکیشن ---
 # لیست کدهای کشورها برای دسته‌بندی (به راحتی می‌توانید اضافه یا کم کنید)
@@ -117,13 +118,14 @@ def process_and_save(config_list: List[str], filename: str, names_list: List[str
         javid_nam = names_list[name_index]
         name_without_spaces = javid_nam.replace(" ", "-")
         
+        # --- !! تغییر اعمال شد !! ---
         # --- فرمت جدید نام‌گذاری ---
         # اگر فایل لوکیشن است، لوکیشن را هم اضافه می‌کنیم
         if "LOC-" in filename:
             country_code = filename.split('-')[-1].replace('.txt', '')
-            new_name = f"POORIA-{country_code}-{name_without_spaces}"
+            new_name = f"POORIAred-{country_code}-{name_without_spaces}"
         else:
-             new_name = f"POORIA-{name_without_spaces}"
+             new_name = f"POORIAred-{name_without_spaces}"
         
         encoded_name = urllib.parse.quote(new_name)
         new_link = f"{base_link}#{encoded_name}"
@@ -209,7 +211,7 @@ def main():
         elif config.startswith('hysteria://') or config.startswith('hy2://'): hysteria_list.append(config)
         else: other_list.append(config)
             
-    # ذخیره فایل‌های پروتکل
+    # ذخیره فایل‌های پروتکل (با نام‌های جدید)
     process_and_save(list(unique_configs), OUTPUT_FILENAME_MIX, shuffled_names)
     process_and_save(vless_list, OUTPUT_FILENAME_VLESS, shuffled_names)
     process_and_save(vmess_list, OUTPUT_FILENAME_VMESS, shuffled_names)
@@ -242,7 +244,8 @@ def main():
     for code, configs in location_lists.items():
         if len(configs) > 0:
             print(f"لوکیشن {code}: {len(configs)} کانفیگ")
-            filename = f"POORIA-LOC-{code}.txt"
+            # --- !! تغییر اعمال شد !! ---
+            filename = f"POORIAred-LOC-{code}.txt"
             process_and_save(configs, filename, shuffled_names)
     print("-" * 30)
     
@@ -250,4 +253,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
