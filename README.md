@@ -12,25 +12,10 @@
 
 ---
 
-### 🔰 بر اساس پروتکل (All-in-One)
+## 🔰 بر اساس پروتکل (All-in-One)
 
+### 💠 ساب جامع (شامل تمام پروتکل‌ها - پیشنهادی)
 <div dir="ltr">
 
 ```bash
-# ساب جامع (شامل تمام پروتکل‌ها - پیشنهادی)
 [https://raw.githubusercontent.com/redfreee8/POORIA-javidaniran-VIP/main/POORIAred-MIX.txt](https://raw.githubusercontent.com/redfreee8/POORIA-javidaniran-VIP/main/POORIAred-MIX.txt)
-
-# ساب VLESS
-[https://raw.githubusercontent.com/redfreee8/POORIA-javidaniran-VIP/main/POORIAred-VLESS.txt](https://raw.githubusercontent.com/redfreee8/POORIA-javidaniran-VIP/main/POORIAred-VLESS.txt)
-
-# ساب VMESS
-[https://raw.githubusercontent.com/redfreee8/POORIA-javidaniran-VIP/main/POORIAred-VMESS.txt](https://raw.githubusercontent.com/redfreee8/POORIA-javidaniran-VIP/main/POORIAred-VMESS.txt)
-
-# ساب Trojan
-[https://raw.githubusercontent.com/redfreee8/POORIA-javidaniran-VIP/main/POORIAred-TROJAN.txt](https://raw.githubusercontent.com/redfreee8/POORIA-javidaniran-VIP/main/POORIAred-TROJAN.txt)
-
-# ساب Hysteria (hy2)
-[https://raw.githubusercontent.com/redfreee8/POORIA-javidaniran-VIP/main/POORIAred-HYSTERIA.txt](https://raw.githubusercontent.com/redfreee8/POORIA-javidaniran-VIP/main/POORIAred-HYSTERIA.txt)
-
-# ساب Shadowsocks
-[https://raw.githubusercontent.com/redfreee8/POORIA-javidaniran-VIP/main/POORIAred-ss.txt](https://raw.githubusercontent.com/redfreee8/POORIA-javidaniran-VIP/main/POORIAred-ss.txt)
