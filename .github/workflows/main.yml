@@ -36,16 +36,20 @@ jobs:
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions-bot@github.com"
           
-          # --- راه‌حل اینجاست ---
-          # همه‌ی فایل‌هایی که با POORIA شروع می‌شوند را اضافه می‌کند
-          git add POORIA*.txt
+          # --- تغییر اصلی اینجاست ---
+          # به جای اسم فایل خاص، همه تغییرات رو اضافه می‌کنه
+          git add .
+          
+          # --- این هم برای دیباگ اضافه شد ---
+          # به ما نشون می‌ده چه فایل‌هایی استیج شدن
+          git status
           
           # چک می‌کند که آیا تغییری برای کامیت وجود دارد یا نه
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
             echo "Changes detected, committing and pushing..."
-            git commit -m "Updated subscription files (all POORIA files)"
+            git commit -m "Updated subscription files (all files)"
             git push
           fi
 
