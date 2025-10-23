@@ -36,20 +36,22 @@ jobs:
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions-bot@github.com"
           
-          # --- تغییر اصلی اینجاست ---
-          # به جای اسم فایل خاص، همه تغییرات رو اضافه می‌کنه
-          git add .
+          echo "--- Git status BEFORE add ---"
+          git status -s # دیباگ: وضعیت فایل‌ها قبل از اد کردن
           
-          # --- این هم برای دیباگ اضافه شد ---
-          # به ما نشون می‌ده چه فایل‌هایی استیج شدن
-          git status
+          # --- تغییر اصلی اینجاست ---
+          # به جای . ، فقط فایل‌های txt. را اضافه می‌کند
+          git add *.txt
+          
+          echo "--- Git status AFTER add ---"
+          git status -s # دیباG: وضعیت فایل‌ها بعد از اد کردن
           
           # چک می‌کند که آیا تغییری برای کامیت وجود دارد یا نه
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
             echo "Changes detected, committing and pushing..."
-            git commit -m "Updated subscription files (all files)"
+            git commit -m "Updated subscription files (*.txt)"
             git push
           fi
 
