@@ -29,22 +29,24 @@ jobs:
         run: python collector.py # اسکریپت پایتون اجرا می‌شود و همه‌ی فایل‌ها را می‌سازد
 
       - name: List files in directory
-        run: ls -la # <--- این مرحله اضافه شد تا ببینیم فایل‌ها ساخته شدن یا نه
+        run: ls -la # برای دیباگ، لیست فایل‌ها رو نشون می‌ده
 
       - name: Commit and Push new sub files
         run: |
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions-bot@github.com"
           
-          # فایل‌های مورد نظر را اضافه می‌کند
-          git add POORIAred*.txt
+          # --- راه‌حل اینجاست ---
+          # همه‌ی فایل‌هایی که با POORIA شروع می‌شوند را اضافه می‌کند
+          git add POORIA*.txt
           
           # چک می‌کند که آیا تغییری برای کامیت وجود دارد یا نه
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
             echo "Changes detected, committing and pushing..."
-            git commit -m "Updated subscription files"
+            git commit -m "Updated subscription files (all POORIA files)"
             git push
           fi
+
 
